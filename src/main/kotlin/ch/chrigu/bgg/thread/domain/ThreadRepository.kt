@@ -1,5 +1,6 @@
-package ch.chrigu.bgg.domain
+package ch.chrigu.bgg.thread.domain
 
+import ch.chrigu.bgg.forum.domain.Forum
 import reactor.core.publisher.Flux
 import java.time.OffsetDateTime
 

@@ -1,4 +1,4 @@
-package ch.chrigu.bgg.infrastructure.repositories
+package ch.chrigu.bgg.core.infrastructure.client
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText
 

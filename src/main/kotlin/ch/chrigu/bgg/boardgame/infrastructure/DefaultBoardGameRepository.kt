@@ -1,9 +1,11 @@
-package ch.chrigu.bgg.infrastructure.repositories
+package ch.chrigu.bgg.boardgame.infrastructure
 
-import ch.chrigu.bgg.domain.BoardGame
-import ch.chrigu.bgg.domain.BoardGameRepository
-import ch.chrigu.bgg.domain.CollectionStatus
-import ch.chrigu.bgg.infrastructure.repositories.XmlBodyToFluxExtension.xmlBodyToFlux
+import ch.chrigu.bgg.boardgame.domain.BoardGame
+import ch.chrigu.bgg.boardgame.domain.BoardGameId
+import ch.chrigu.bgg.boardgame.domain.BoardGameRepository
+import ch.chrigu.bgg.boardgame.domain.CollectionStatus
+import ch.chrigu.bgg.core.infrastructure.client.XmlBodyToFluxExtension.xmlBodyToFlux
+import ch.chrigu.bgg.core.infrastructure.client.XmlValue
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement
@@ -24,7 +26,7 @@ class DefaultBoardGameRepository(private val webClient: WebClient) : BoardGameRe
     }
 
     private fun toBoardGame(item: CollectionItem): BoardGame {
-        return BoardGame(item.objectid, item.name.value, item.status.toBoardGameStatus())
+        return BoardGame(item.getBoardGameId(), item.name.value, item.status.toBoardGameStatus())
     }
 }
 
@@ -33,7 +35,10 @@ data class CollectionItems(val item: List<CollectionItem> = emptyList())
 
 data class CollectionItem(@JacksonXmlProperty(isAttribute = true) val objectid: String,
                           val name: XmlValue,
-                          val status: CollectionItemStatus)
+                          val status: CollectionItemStatus) {
+    @JsonIgnore
+    fun getBoardGameId() = BoardGameId(objectid)
+}
 
 data class CollectionItemStatus(@JacksonXmlProperty(isAttribute = true) val own: String,
                                 @JacksonXmlProperty(isAttribute = true) val want: String,

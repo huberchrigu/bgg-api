@@ -1,9 +1,9 @@
-package ch.chrigu.bgg.infrastructure.repositories
+package ch.chrigu.bgg.forum.infrastructure
 
-import ch.chrigu.bgg.domain.BoardGame
-import ch.chrigu.bgg.domain.Forum
-import ch.chrigu.bgg.domain.ForumRepository
-import ch.chrigu.bgg.infrastructure.repositories.XmlBodyToFluxExtension.xmlBodyToFlux
+import ch.chrigu.bgg.boardgame.domain.BoardGame
+import ch.chrigu.bgg.forum.domain.Forum
+import ch.chrigu.bgg.forum.domain.ForumRepository
+import ch.chrigu.bgg.core.infrastructure.client.XmlBodyToFluxExtension.xmlBodyToFlux
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.stereotype.Repository
 import org.springframework.web.reactive.function.client.WebClient

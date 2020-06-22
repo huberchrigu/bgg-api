@@ -1,0 +1,21 @@
+@startuml
+class User #lightblue {
+ collection
+}
+
+class BoardGame {
+ collectionStatus
+}
+class Forum
+class Thread {
+ posts
+}
+
+User "1" ..> "*" BoardGame
+BoardGame "1" ..> "*" Forum
+Forum "1" ..> "*" Thread
+
+note left of User #lightblue: Blue aggregates\nare persisted in MongoDB
+note left of BoardGame: Yellow aggregates\nare fetched from\nthe goardgamegeek API
+
+@enduml

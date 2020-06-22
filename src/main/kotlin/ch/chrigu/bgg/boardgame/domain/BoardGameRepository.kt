@@ -1,4 +1,4 @@
-package ch.chrigu.bgg.domain
+package ch.chrigu.bgg.boardgame.domain
 
 import reactor.core.publisher.Flux
 

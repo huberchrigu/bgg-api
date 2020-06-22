@@ -1,4 +1,4 @@
-package ch.chrigu.bgg.domain
+package ch.chrigu.bgg.forum.domain
 
 import java.time.OffsetDateTime
 

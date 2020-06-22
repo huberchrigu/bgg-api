@@ -1,10 +1,11 @@
-package ch.chrigu.bgg.infrastructure.repositories
+package ch.chrigu.bgg.thread.infrastructure
 
-import ch.chrigu.bgg.domain.Forum
-import ch.chrigu.bgg.domain.Post
-import ch.chrigu.bgg.domain.Thread
-import ch.chrigu.bgg.domain.ThreadRepository
-import ch.chrigu.bgg.infrastructure.repositories.XmlBodyToFluxExtension.xmlBodyToFlux
+import ch.chrigu.bgg.forum.domain.Forum
+import ch.chrigu.bgg.thread.domain.Post
+import ch.chrigu.bgg.thread.domain.Thread
+import ch.chrigu.bgg.thread.domain.ThreadRepository
+import ch.chrigu.bgg.core.infrastructure.client.XmlBodyToFluxExtension.xmlBodyToFlux
+import ch.chrigu.bgg.core.infrastructure.client.XmlValue
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty

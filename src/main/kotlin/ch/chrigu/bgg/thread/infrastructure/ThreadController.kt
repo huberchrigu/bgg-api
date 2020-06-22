@@ -1,11 +1,13 @@
-package ch.chrigu.bgg.infrastructure.web
+package ch.chrigu.bgg.thread.infrastructure
 
-import ch.chrigu.bgg.service.ThreadService
-import ch.chrigu.bgg.service.ThreadsPerBoardGame
-import org.springframework.web.bind.annotation.*
+import ch.chrigu.bgg.thread.api.ThreadService
+import ch.chrigu.bgg.thread.api.ThreadsPerBoardGame
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
-import reactor.kotlin.core.publisher.toMono
 import java.time.Duration
 import javax.validation.Valid
 import javax.validation.constraints.NotNull
@@ -14,13 +16,8 @@ import javax.validation.constraints.NotNull
 @RequestMapping("/threads")
 class ThreadController(private val threadService: ThreadService) {
     @GetMapping("/newest")
-    fun getThreads(@RequestParam user: String, @RequestParam(defaultValue = "PT1H") since: Duration): Flux<ThreadsPerBoardGame> {
+    fun getThreads(@RequestParam user: String, since: Duration?): Flux<ThreadsPerBoardGame> {
         return threadService.findNewestThreads(user, since)
-    }
-
-    @PostMapping("/newest")
-    fun addThread(@Valid body: ThreadRequest): Mono<ThreadRequest> {
-        return body.toMono()
     }
 
     @GetMapping("/newest/obj")

@@ -1,7 +1,7 @@
-package ch.chrigu.bgg.infrastructure.web;
+package ch.chrigu.bgg.thread.infrastructure;
 
-import ch.chrigu.bgg.service.ThreadService;
-import ch.chrigu.bgg.service.ThreadsPerBoardGame;
+import ch.chrigu.bgg.thread.api.ThreadService;
+import ch.chrigu.bgg.thread.api.ThreadsPerBoardGame;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
