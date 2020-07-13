@@ -2,14 +2,15 @@ package ch.chrigu.bgg.core.infrastructure.client
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Profile
 import org.springframework.web.reactive.function.client.*
 
 @Configuration
-class WebClientConfig {
-    private val baseUrl = "https://api.geekdo.com/xmlapi2"
+@Profile("!mock-web-client")
+class WebClientConfig(private val bggApiProperties: BggApiProperties) {
 
     @Bean
     fun webClient() = WebClient.builder()
-            .baseUrl(baseUrl)
+            .baseUrl(bggApiProperties.url)
             .build()
 }
