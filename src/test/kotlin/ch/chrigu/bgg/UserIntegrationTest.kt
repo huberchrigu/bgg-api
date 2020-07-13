@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono
 
 @SpringBootTest
 @AutoConfigureWebTestClient
-class BggApiApplicationTests {
+class UserIntegrationTest {
     @Autowired
     private lateinit var webTestClient: WebTestClient
 

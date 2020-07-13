@@ -1,0 +1,30 @@
+{
+  "id" : "4cd61dfe-9d4c-46d5-9505-510407b4d456",
+  "name" : "thread",
+  "request" : {
+    "urlPattern" : "/thread\\?id=2462382&minarticledate=(.*)",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><thread id=\"2462382\" numarticles=\"1\" link=\"https://boardgamegeek.com/thread/2462382\" termsofuse=\"https://boardgamegeek.com/xmlapi/termsofuse\">\n<subject>Lizix Harrow Ability</subject>\n<articles>\n\n\t\t\t<article id=\"35294870\" username=\"RKon27\"\n\t\t\t\t link=\"https://boardgamegeek.com/thread/2462382/article/35294870#35294870\"\n\t\t\t\t postdate=\"2020-07-08T07:58:23-05:00\"\n\t\t\t \teditdate=\"2020-07-08T07:58:23-05:00\"\n\t\t\t \tnumedits=\"0\">\n\t\t\t<subject>Lizix Harrow Ability</subject>\n\t\t\t<body>This argument came up in my last game and I am looking for some outside input. The Lizix ability Harrow reads After each round of ground combat, your ships in the active system may use their Bombardment abilities against your opponent's ground forces on the planet. The issue that came up is, if the Lizix players last ground troop is defeated may he still use Bombardment again? Or when the last unit is killed is this considered the end of a round of combat, or does combat simply end once one side has no forces left?</body>\n\t</article>\n\t</articles>\n</thread>\n",
+    "headers" : {
+      "Server" : "nginx/1.17.9",
+      "Date" : "Wed, 08 Jul 2020 12:59:55 GMT",
+      "Content-Type" : "text/xml; charset=\"UTF-8\"",
+      "X-Powered-By" : "PHP/7.3.18",
+      "xkey" : "geekthreads /api/forums/threads/thread/2462382",
+      "Etag" : "W/\"0791e9db55a83d6948535bcefb1835de\"",
+      "Cache-Control" : "max-age=3600",
+      "Vary" : "Accept-Encoding",
+      "X-Varnish" : "1073414577",
+      "Age" : "0",
+      "Accept-Ranges" : "bytes",
+      "Via" : "1.1 varnish (Varnish/6.3), 1.1 google",
+      "Alt-Svc" : "clear"
+    }
+  },
+  "uuid" : "4cd61dfe-9d4c-46d5-9505-510407b4d456",
+  "persistent" : true,
+  "insertionIndex" : 362
+}

@@ -1,0 +1,30 @@
+{
+  "id" : "982459ff-36dd-4a4a-987c-ef5a2a48a282",
+  "name" : "thread",
+  "request" : {
+    "urlPattern" : "/thread\\?id=2461920&minarticledate=(.*)",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><thread id=\"2461920\" numarticles=\"10\" link=\"https://boardgamegeek.com/thread/2461920\" termsofuse=\"https://boardgamegeek.com/xmlapi/termsofuse\">\n<subject>Kickstarter Collector&#039;s Edition vs Classic Edition &amp; General Pricing Question</subject>\n<articles>\n\n\t\t\t<article id=\"35294678\" username=\"ThreeMs\"\n\t\t\t\t link=\"https://boardgamegeek.com/thread/2461920/article/35294678#35294678\"\n\t\t\t\t postdate=\"2020-07-08T07:31:32-05:00\"\n\t\t\t \teditdate=\"2020-07-08T07:37:37-05:00\"\n\t\t\t \tnumedits=\"1\">\n\t\t\t<subject>Re: Kickstarter Collector&#039;s Edition vs Classic Edition &amp; General Pricing Question</subject>\n\t\t\t<body>&lt;font color=#2121A4&gt;&lt;div class='quote'&gt;&lt;div class='quotetitle'&gt;&lt;p&gt;&lt;b&gt;saradner wrote:&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class='quotebody'&gt;&lt;i&gt;Hey BGG Collective Hive Mind! Looking for some help assessing a potential purchase here.&lt;br/&gt;&lt;br/&gt;I have the potential at the end of this week to purchase what I believe is an &quot;all-in&quot; pledge from the second Kickstarter campaign for this game. Price is around 300 with shipping. The game is in like new condition, and even includes about 600 sleeves for the most commonly handled cards. I've done some scouring around here on the marketplace and elsewhere, but it's kinda hard to assess the value because there are so many different versions and bundles listed including different expansions. Which leads me to question the first: does this seem like a reasonably good deal for the all-in collector's edition version of this game, which looks like it went for about $250 + shipping in the Kickstarter?&lt;br/&gt;&lt;br/&gt;Second, I've also discovered the &quot;Classic Edition&quot; which looks to be basically the same thing, except minus all the &quot;KS Exclusive&quot; content. I tried to math it out to the best of my ability, and it looks like getting something similar to an &quot;all-in&quot; Classic Edition would cost me about $240 with free shipping from the Serious Pulp website. That would not include the KS exclusive expansion, or any of the KS stretch goals however. And from the look of things, it wouldn't include the storage box for the expansion either (which seems a bit weird, but okay...). So I guess question the second, for folks who have played the game with the KS expansion and extras: is it worth the extra $60 for that additional content?&lt;br/&gt;&lt;br/&gt;I haven't actually played the game at all, ever, so spending $300 is a bit risky and a relatively big purchase for something I'm not actually 100% sure I'll like! The collector/completionist in me loves the idea of getting everything at once, though, and not having to search around for expansions and add-ons later. I've checked out the reviews, and I like the theme and idea of the game, though I've certainly noticed that some people feel it's a bit too &quot;grind-y&quot; and sometimes overly punishing to the players. I think I can live with those complaints. Is there anything else I should know, though, before I purchase?&lt;br/&gt;&lt;br/&gt;Thanks in advance for any advice you guys might have!&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;I got the Rookie pledge earlier this year and if you are happy with the mechanics, the all-in pledge seems like a better deal to me, especially if you want to have everything and as Swamps of Madness is hard to get these days (I recently missed an auction here in the UK and it went for £45 alone).</body>\n\t</article>\n\t</articles>\n</thread>\n",
+    "headers" : {
+      "Server" : "nginx/1.17.9",
+      "Date" : "Wed, 08 Jul 2020 12:59:55 GMT",
+      "Content-Type" : "text/xml; charset=\"UTF-8\"",
+      "X-Powered-By" : "PHP/7.3.18",
+      "xkey" : "geekthreads /api/forums/threads/thread/2461920",
+      "Etag" : "W/\"398d14d6e0b84a441a36b62ebc2ec9f4\"",
+      "Cache-Control" : "max-age=3600",
+      "Vary" : "Accept-Encoding",
+      "X-Varnish" : "1065988916",
+      "Age" : "0",
+      "Accept-Ranges" : "bytes",
+      "Via" : "1.1 varnish (Varnish/6.3), 1.1 google",
+      "Alt-Svc" : "clear"
+    }
+  },
+  "uuid" : "982459ff-36dd-4a4a-987c-ef5a2a48a282",
+  "persistent" : true,
+  "insertionIndex" : 360
+}

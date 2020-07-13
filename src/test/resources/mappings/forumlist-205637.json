@@ -1,0 +1,27 @@
+{
+  "id" : "314f9f02-3fd9-4712-b1b4-5389fe4d7bf1",
+  "name" : "forumlist",
+  "request" : {
+    "url" : "/forumlist?id=205637&type=thing",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><forums type=\"thing\" id=\"205637\" termsofuse=\"https://boardgamegeek.com/xmlapi/termsofuse\">\n\t<forum id=\"2003719\" groupid=\"0\" title=\"Reviews\" noposting=\"0\" description=\"Post your game reviews in this forum.  &lt;A href=&quot;/thread/59278&quot;&gt;Click here for help on writing game reviews.&lt;/A&gt;\" numthreads=\"64\" numposts=\"1241\" lastpostdate=\"Fri, 08 May 2020 14:28:31 +0000\" />\n\t<forum id=\"2003720\" groupid=\"0\" title=\"Sessions\" noposting=\"0\" description=\"Post your session reports here.\" numthreads=\"134\" numposts=\"900\" lastpostdate=\"Sat, 20 Jun 2020 00:28:49 +0000\" />\n\t<forum id=\"2003721\" groupid=\"0\" title=\"General\" noposting=\"0\" description=\"Post any related article to this game here.\" numthreads=\"3122\" numposts=\"46620\" lastpostdate=\"Wed, 08 Jul 2020 07:27:02 +0000\" />\n\t<forum id=\"2003722\" groupid=\"0\" title=\"Rules\" noposting=\"0\" description=\"Post any rules questions you have here.\" numthreads=\"2625\" numposts=\"21397\" lastpostdate=\"Wed, 08 Jul 2999 12:55:42 +0000\" />\n\t<forum id=\"2003723\" groupid=\"0\" title=\"Strategy\" noposting=\"0\" description=\"Post strategy and tactics articles here.\" numthreads=\"168\" numposts=\"2441\" lastpostdate=\"Wed, 08 Jul 2020 11:43:56 +0000\" />\n\t<forum id=\"2003724\" groupid=\"0\" title=\"Variants\" noposting=\"0\" description=\"Post variants to the game rules here.\" numthreads=\"260\" numposts=\"3114\" lastpostdate=\"Tue, 07 Jul 2020 12:44:35 +0000\" />\n\t<forum id=\"2003725\" groupid=\"0\" title=\"News\" noposting=\"0\" description=\"Post time sensitive announcements here.\" numthreads=\"190\" numposts=\"4943\" lastpostdate=\"Thu, 25 Jun 2020 23:41:55 +0000\" />\n\t<forum id=\"2429842\" groupid=\"0\" title=\"Crowdfunding\" noposting=\"0\" description=\"Post crowdfunding / preorder content here.\" numthreads=\"0\" numposts=\"0\" lastpostdate=\"\" />\n\t<forum id=\"2003726\" groupid=\"0\" title=\"Play By Forum\" noposting=\"0\" description=\"Run Play By Forum (PBF) games here.\" numthreads=\"13\" numposts=\"12564\" lastpostdate=\"Wed, 08 Jul 2020 08:49:26 +0000\" />\n\t<forum id=\"2003727\" groupid=\"0\" title=\"Organized Play\" noposting=\"0\" description=\"Post here to find local gamers and to promote local events.\" numthreads=\"75\" numposts=\"515\" lastpostdate=\"Mon, 02 Mar 2020 23:04:16 +0000\" />\n</forums>\n",
+    "headers" : {
+      "Server" : "nginx/1.17.9",
+      "Date" : "Wed, 08 Jul 2020 12:59:53 GMT",
+      "Content-Type" : "text/xml; charset=\"UTF-8\"",
+      "X-Powered-By" : "PHP/7.3.18",
+      "Vary" : "Accept-Encoding",
+      "X-Varnish" : "1062154994",
+      "Age" : "0",
+      "Accept-Ranges" : "bytes",
+      "Via" : "1.1 varnish (Varnish/6.3), 1.1 google",
+      "Alt-Svc" : "clear"
+    }
+  },
+  "uuid" : "314f9f02-3fd9-4712-b1b4-5389fe4d7bf1",
+  "persistent" : true,
+  "insertionIndex" : 283
+}

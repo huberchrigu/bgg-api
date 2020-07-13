@@ -1,0 +1,27 @@
+{
+  "id": "3ed2fb16-8b82-4d04-82dd-0a6545ca49c7",
+  "name": "collection",
+  "request": {
+    "url": "/collection?username=user",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<items totalitems=\"87\" termsofuse=\"https://boardgamegeek.com/xmlapi/termsofuse\" pubdate=\"Wed, 08 Jul 2020 08:45:08 +0000\">\n    <item objecttype=\"thing\" objectid=\"180263\" subtype=\"boardgame\" collid=\"56991669\">\n        <name sortindex=\"5\">The 7th Continent</name>\n        <yearpublished>2017</yearpublished>\n        <image>\n            https://cf.geekdo-images.com/original/img/iQDBaRJ2LxJba_M7gPZj24eHwBc=/0x0/pic2648303.jpg\n        </image>\n        <thumbnail>https://cf.geekdo-images.com/thumb/img/zj6guxkAq2hrtEbLGFrIPCh4jv0=/fit-in/200x150/pic2648303.jpg</thumbnail>\n        <status own=\"1\" prevowned=\"0\" fortrade=\"0\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2019-09-18 03:26:39\"/>\n        <numplays>0</numplays>\n    </item>\n    <item objecttype=\"thing\" objectid=\"205637\" subtype=\"boardgame\" collid=\"52967190\">\n        <name sortindex=\"1\">Arkham Horror: The Card Game</name>\n        <yearpublished>2016</yearpublished>\n        <image>\n            https://cf.geekdo-images.com/original/img/EQ0Kl-bH9RCI5aJWVLnAlAfo00E=/0x0/pic3122349.jpg\n        </image>\n        <thumbnail>https://cf.geekdo-images.com/thumb/img/66qtunbh0lfNhBrynkLruHyfZeY=/fit-in/200x150/pic3122349.jpg</thumbnail>\n        <status own=\"1\" prevowned=\"0\" fortrade=\"0\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2018-12-29 05:50:39\"/>\n        <numplays>0</numplays>\n    </item>\n    <item objecttype=\"thing\" objectid=\"233078\" subtype=\"boardgame\" collid=\"64110937\">\n        <name sortindex=\"1\">Twilight Imperium (Fourth Edition)</name>\n        <yearpublished>2017</yearpublished>\n        <image>\n            https://cf.geekdo-images.com/original/img/Xe0YAmobS_L0Nlo4YJgyFwOW9EM=/0x0/pic3727516.jpg\n        </image>\n        <thumbnail>https://cf.geekdo-images.com/thumb/img/UOV5jJadzHc6ebYd5CfZXGbOWsc=/fit-in/200x150/pic3727516.jpg</thumbnail>\n        <status own=\"0\" prevowned=\"0\" fortrade=\"0\" want=\"0\" wanttoplay=\"1\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2019-09-18 03:27:14\"/>\n        <numplays>0</numplays>\n    </item>\n    <item objecttype=\"thing\" objectid=\"109\" subtype=\"boardgame\" collid=\"56577175\">\n        <name sortindex=\"1\">Wettstreit der Baumeister</name>\n        <yearpublished>1994</yearpublished>\n        <image>\n            https://cf.geekdo-images.com/original/img/fxbFjKQNnSlGSVqMhKH-OV7yqUA=/0x0/pic613651.jpg\n        </image>\n        <thumbnail>https://cf.geekdo-images.com/thumb/img/YvXPTgFCKEIAUIu1tmr2pbt3G24=/fit-in/200x150/pic613651.jpg</thumbnail>\n        <status own=\"0\" prevowned=\"1\" fortrade=\"0\" want=\"0\" wanttoplay=\"0\" wanttobuy=\"0\" wishlist=\"0\" preordered=\"0\" lastmodified=\"2019-10-16 07:58:54\"/>\n        <numplays>0</numplays>\n    </item>\n</items>",
+    "headers": {
+      "Server": "nginx/1.17.9",
+      "Date": "Wed, 08 Jul 2020 12:59:52 GMT",
+      "Content-Type": "text/xml; charset=\"UTF-8\"",
+      "X-Powered-By": "PHP/7.3.18",
+      "Vary": "Accept-Encoding",
+      "X-Varnish": "1065988877",
+      "Age": "0",
+      "Accept-Ranges": "bytes",
+      "Via": "1.1 varnish (Varnish/6.3), 1.1 google",
+      "Alt-Svc": "clear"
+    }
+  },
+  "uuid": "3ed2fb16-8b82-4d04-82dd-0a6545ca49c7",
+  "persistent": true,
+  "insertionIndex": 276
+}
