@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 /**
  * Is not the board game entity itself, rather a board game in the collection of a certain player.
  */
-data class BoardGame(@field:JsonIgnore val id: BoardGameId, val name: String, val collectionStatus: CollectionStatus) {
+data class BoardGame(val id: BoardGameId, val name: String, val collectionStatus: CollectionStatus) {
     @JsonIgnore
     fun isOfInterest(): Boolean {
         return collectionStatus == CollectionStatus.OWN || collectionStatus == CollectionStatus.WANT
