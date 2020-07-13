@@ -26,8 +26,13 @@ class UserService(private val userRepository: UserRepository) {
         return user.map { it.removeIgnoredGame(boardGameId) }.flatMap { userRepository.save(it) }
     }
 
+    fun delete(userId: String): Mono<Void> {
+        return getUser(userId).flatMap { userRepository.delete(it) }
+    }
+
     private fun getUser(userId: String) = userRepository.findById(userId)
             .switchIfEmpty { Mono.error(UserNotFoundException(userId)) }
+
 }
 
 data class IgnoreGameDto(@field:NotNull val boardGameId: BoardGameId?)

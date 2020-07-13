@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull
 @RequestMapping("/threads")
 class ThreadController(private val threadService: ThreadService) {
     @GetMapping("/newest")
-    fun getThreads(@RequestParam user: String, since: Duration?): Flux<ThreadsPerBoardGame> {
+    fun getThreads(@RequestParam user: String, @RequestParam since: Duration?): Flux<ThreadsPerBoardGame> {
         return threadService.findNewestThreads(user, since)
     }
 

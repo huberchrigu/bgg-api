@@ -29,4 +29,9 @@ class UserController(private val userService: UserService) {
     fun ignoreGame(@PathVariable userId: String, @PathVariable boardGameId: BoardGameId): Mono<User> {
         return userService.removeIgnoredGame(userId, boardGameId)
     }
+
+    @DeleteMapping("/{userId}")
+    fun deleteUser(@PathVariable userId: String): Mono<Void> {
+        return userService.delete(userId)
+    }
 }

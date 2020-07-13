@@ -13,9 +13,7 @@ import org.springframework.stereotype.Repository
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Flux
 import reactor.kotlin.core.publisher.toFlux
-import java.time.OffsetDateTime
-import java.time.ZoneId
-import java.time.ZoneOffset
+import java.time.*
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -25,7 +23,7 @@ class DefaultThreadRepository(private val webClient: WebClient) : ThreadReposito
     private val threadUrl = "/thread?id={id}&minarticledate={minDate}"
     private val dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
 
-    override fun findInForum(forum: Forum, lastUpdateSince: OffsetDateTime): Flux<Thread> {
+    override fun findInForum(forum: Forum, lastUpdateSince: ZonedDateTime): Flux<Thread> {
         return webClient.get().uri(forumUrl, forum.id).retrieve()
                 .xmlBodyToFlux<ForumResponse>()
                 .flatMap { it.threads!!.toFlux() }
@@ -33,8 +31,8 @@ class DefaultThreadRepository(private val webClient: WebClient) : ThreadReposito
                 .flatMap { findInThread(it, lastUpdateSince) }
     }
 
-    private fun findInThread(threadItem: ThreadItem, since: OffsetDateTime): Flux<Thread> {
-        return webClient.get().uri(threadUrl, threadItem.id, since.withOffsetSameInstant(ZoneOffset.ofHours(-5)).format(dateTimeFormatter)).retrieve()
+    private fun findInThread(threadItem: ThreadItem, since: ZonedDateTime): Flux<Thread> {
+        return webClient.get().uri(threadUrl, threadItem.id, since.withZoneSameInstant(ZoneOffset.ofHours(-5)).format(dateTimeFormatter)).retrieve()
                 .xmlBodyToFlux<ThreadResponse>()
                 .map { toThread(it) }
     }
@@ -44,9 +42,9 @@ class DefaultThreadRepository(private val webClient: WebClient) : ThreadReposito
     }
 
     private fun toPost(articleItem: ArticleItem): Post {
-        return Post(articleItem.body.value, articleItem.username)
+        val editDate = LocalDateTime.ofInstant(articleItem.editdate.toInstant(), ZoneId.systemDefault())
+        return Post(articleItem.body.value, articleItem.username, editDate)
     }
-
 }
 
 class ForumResponse {
@@ -58,7 +56,7 @@ class ForumResponse {
 
 data class ThreadItem(val id: String, val lastpostdate: Date) {
     @JsonIgnore
-    fun getLastPostDate(): OffsetDateTime = OffsetDateTime.ofInstant(lastpostdate.toInstant(), ZoneId.systemDefault())
+    fun getLastPostDate(): ZonedDateTime = ZonedDateTime.ofInstant(lastpostdate.toInstant(), ZoneId.systemDefault())
 }
 
 data class ThreadResponse(val subject: String) {

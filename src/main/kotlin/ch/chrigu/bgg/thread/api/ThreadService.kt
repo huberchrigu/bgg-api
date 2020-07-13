@@ -10,45 +10,34 @@ import ch.chrigu.bgg.user.domain.UserRepository
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
-import java.time.Duration
-import java.time.OffsetDateTime
-import java.time.ZoneOffset
+import java.time.*
 
 @Service
 class ThreadService(private val boardGameRepository: BoardGameRepository, private val forumRepository: ForumRepository, private val threadRepository: ThreadRepository,
                     private val userRepository: UserRepository) {
     fun findNewestThreads(forUser: String, lastUpdateSince: Duration?): Flux<ThreadsPerBoardGame> {
         return userRepository.findById(forUser)
+                .flatMap { updateLastRead(it).map { _ -> it } }
+                .defaultIfEmpty(User(forUser, LocalDateTime.now().minusHours(1)))
                 .flatMapMany { findNewestThreadsForUser(it, lastUpdateSince) }
-                .switchIfEmpty { findNewestThreadsForUser(forUser, lastUpdateSince) }
+    }
+
+    private fun updateLastRead(user: User): Mono<User> {
+        return user.updateLastRead().let { userRepository.save(it) }
     }
 
     private fun findNewestThreadsForUser(forUser: User, lastUpdateSince: Duration?): Flux<ThreadsPerBoardGame> {
-        val since: OffsetDateTime = if (lastUpdateSince == null)
-            forUser.lastRead.atOffset(ZoneOffset.UTC)
+        val since = if (lastUpdateSince == null)
+            forUser.lastRead.atZone(ZoneId.systemDefault())
         else
-            getStartTimeOrDefault(lastUpdateSince)
-        return forUser.updateLastRead().let { userRepository.save(it) }
-                .flatMapMany { boardGameRepository.findInUserCollection(it.name) }
+            ZonedDateTime.now().minus(lastUpdateSince)
+        return boardGameRepository.findInUserCollection(forUser.name)
                 .filter { boardGame -> boardGame.isOfInterest() && !forUser.ignoreGames.contains(boardGame.id) }
                 .checkpoint("Board games of interest")
                 .flatMap { getThreadsForBoardGame(it, since) }
     }
 
-    private fun findNewestThreadsForUser(forUser: String, lastUpdateSince: Duration?): Flux<ThreadsPerBoardGame> {
-        val since = getStartTimeOrDefault(lastUpdateSince)
-        return boardGameRepository.findInUserCollection(forUser)
-                .filter { boardGame -> boardGame.isOfInterest() }
-                .checkpoint("Board games of interest")
-                .flatMap { getThreadsForBoardGame(it, since) }
-    }
-
-    private fun getStartTimeOrDefault(lastUpdateSince: Duration?): OffsetDateTime {
-        val default = Duration.ofHours(1)
-        return OffsetDateTime.now().minus(lastUpdateSince ?: default)
-    }
-
-    private fun getThreadsForBoardGame(boardGame: BoardGame, since: OffsetDateTime): Mono<ThreadsPerBoardGame> {
+    private fun getThreadsForBoardGame(boardGame: BoardGame, since: ZonedDateTime): Mono<ThreadsPerBoardGame> {
         return forumRepository.findByBoardGame(boardGame)
                 .filter { it.numOfThreads > 0 && it.lastPostDate?.isAfter(since) ?: false }
                 .checkpoint("Forums with recent threads")
